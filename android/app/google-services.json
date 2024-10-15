@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "44757863823",
+    "project_id": "vavfoods-30f66",
+    "storage_bucket": "vavfoods-30f66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44757863823:android:1cf2f30aac23c69b974ffa",
+        "android_client_info": {
+          "package_name": "com.example.vav_foods_user_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYy7G1LHXpsdFi-ZgFoLXBFcuK423RQ7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
