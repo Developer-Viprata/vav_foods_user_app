@@ -3,24 +3,20 @@
 import 'package:get/get.dart';
 import '../Data/repository/firebase_auth_repo.dart';
 
-class SignupController extends GetxController {
+class LoginController extends GetxController {
   final FirebaseAuthRepo firebaseAuthRepo;
-  var isLoading = false.obs;
-  var toggleIcon = false.obs;
+  LoginController({required this.firebaseAuthRepo});
 
-  SignupController({required this.firebaseAuthRepo});
+  final isLoading = false.obs;
 
-  //signup
-  Future<void> signup(
+  //login
+  Future<void> login(
     String email,
-    String fullName,
-    String phoneNumber,
     String password,
   ) async {
     try {
       isLoading.value = true;
-
-      await firebaseAuthRepo.signup(email, password, fullName, phoneNumber);
+      await firebaseAuthRepo.login(email, password);
       Get.snackbar('Success', "user signed up successfully");
     } catch (e) {
       Get.snackbar('Error', 'Failed to sign up');
