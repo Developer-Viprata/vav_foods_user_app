@@ -26,15 +26,16 @@ class FirebaseAuthServices implements Interfaces {
       if (userCredential != null) {
         // Add the user data to Firestore
         final UserModel userModel = UserModel(
-          userId: userCredential.user!.uid,
-          fullName: fullName,
-          email: email,
-          phoneNumber: phoneNumber,
-          passwordHash: password,
-          role: UserRole.Customer,
-          createdAt: DateTime.now(),
-          updatedAt: DateTime.now(),
-        );
+            userId: userCredential.user!.uid,
+            fullName: fullName,
+            email: email,
+            phoneNumber: phoneNumber,
+            password: password,
+            role: UserRole.Customer,
+            createdAt: DateTime.now(),
+            updatedAt: DateTime.now(),
+            userDeviceToken: '',
+            userImg: '');
         await firebaseFirestore
             .collection('users')
             .doc(userCredential.user!.uid)
