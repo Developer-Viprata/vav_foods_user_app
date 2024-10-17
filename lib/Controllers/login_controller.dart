@@ -25,4 +25,6 @@ class LoginController extends GetxController {
       isLoading.value = false;
     }
   }
+
+  //sign in with google
 }
