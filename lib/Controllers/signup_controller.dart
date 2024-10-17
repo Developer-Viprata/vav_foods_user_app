@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../Data/repository/firebase_auth_repo.dart';
 
@@ -9,6 +10,13 @@ class SignupController extends GetxController {
   var toggleIcon = false.obs;
 
   SignupController({required this.firebaseAuthRepo});
+  
+  // Form controllers
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final phoneController = TextEditingController();
+  final passwordController = TextEditingController();
+  
 
   //signup
   Future<void> signup(

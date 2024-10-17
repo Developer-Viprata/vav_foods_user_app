@@ -1,8 +1,6 @@
 import 'package:get/get.dart';
-import '../Presentation/screens/forgot_password_screen.dart';
-import '../Presentation/screens/home_screen.dart';
-import '../Presentation/screens/login_screen.dart';
-import '../Presentation/screens/signup_screen.dart';
+import 'package:vav_foods_user_app/Presentation/screens/auth/address.dart';
+import 'package:vav_foods_user_app/Presentation/screens/auth/splash_screen.dart';
 
 // Define your routes
 class AppRoutes {
@@ -15,10 +13,10 @@ class AppRoutes {
   // static const String cartScreen = '/CartScreen';
 
   static final List<GetPage> routes = [
-    GetPage(name: splashScreen, page: () => const SignupScreen()),
-    GetPage(name: loginScreen, page: () => const LoginScreen()),
-    GetPage(
-        name: forgotPasswordScreen, page: () => const ForgotPasswordScreen()),
-    GetPage(name: homeScreen, page: () => const HomeScreen()),
+    GetPage(name: splashScreen, page: () => const AddressScreen()),
+    // GetPage(name: loginScreen, page: () => const LoginScreen()),
+    // GetPage(
+    //     name: forgotPasswordScreen, page: () => const ForgotPasswordScreen()),
+    // GetPage(name: homeScreen, page: () => const HomeScreen()),
   ];
 }

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:vav_foods_user_app/Controllers/current_location_cntr.dart';
 
 import '../Controllers/forgot_password_controller.dart';
 import '../Controllers/login_controller.dart';
@@ -11,15 +12,12 @@ class AppBindings extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut<Interfaces>(() => FirebaseAuthServices());
-    Get.lazyPut<FirebaseAuthRepo>(
-        () => FirebaseAuthRepo(interfaces: Get.find<Interfaces>()));
+    Get.lazyPut<FirebaseAuthRepo>(() => FirebaseAuthRepo(interfaces: Get.find<Interfaces>()));
 
-    Get.lazyPut<SignupController>(
-        () => SignupController(firebaseAuthRepo: Get.find<FirebaseAuthRepo>()));
-    Get.lazyPut<LoginController>(
-        () => LoginController(firebaseAuthRepo: Get.find<FirebaseAuthRepo>()));
+    Get.lazyPut<SignupController>(() => SignupController(firebaseAuthRepo: Get.find<FirebaseAuthRepo>()));
+    Get.lazyPut<LoginController>(() => LoginController(firebaseAuthRepo: Get.find<FirebaseAuthRepo>()));
 
-    Get.lazyPut<ForgotPasswordController>(() => ForgotPasswordController(
-        firebaseAuthRepo: Get.find<FirebaseAuthRepo>()));
+    Get.lazyPut<ForgotPasswordController>(() => ForgotPasswordController(firebaseAuthRepo: Get.find<FirebaseAuthRepo>()));
+    Get.lazyPut<AddressController>(() => AddressController());
   }
 }
