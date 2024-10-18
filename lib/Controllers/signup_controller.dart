@@ -5,7 +5,7 @@ import '../Data/repository/firebase_auth_repo.dart';
 
 class SignupController extends GetxController {
   final FirebaseAuthRepo firebaseAuthRepo;
-  var isLoading = true.obs;
+  var isLoading = false.obs;
   var toggleIcon = false.obs;
 
   SignupController({required this.firebaseAuthRepo});
