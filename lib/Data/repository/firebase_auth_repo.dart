@@ -17,6 +17,10 @@ class FirebaseAuthRepo {
     return interfaces.login(email, password);
   }
 
+  Future<void> loginWithGoogle() async {
+    return interfaces.loginWithGoogle();
+  }
+
   // Logout by calling the logout method from Interfaces
   Future<void> logout() async {
     return interfaces.logout();
