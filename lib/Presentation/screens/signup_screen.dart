@@ -152,7 +152,7 @@ class _SignupScreenState extends State<SignupScreen> {
                                               ? MediaQuery.of(context)
                                                       .size
                                                       .width *
-                                                  .85
+                                                  .8
                                               : MediaQuery.of(context)
                                                       .size
                                                       .width *
