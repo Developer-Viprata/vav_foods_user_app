@@ -1,17 +1,19 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 enum UserRole { Customer, Fulfillment, Delivery, Admin }
 
 class UserModel {
-  String userId;
-  String fullName;
-  String email;
-  String phoneNumber;
-  String password;
-  UserRole role;
-  DateTime createdAt;
-  DateTime updatedAt;
-  String userDeviceToken;
-  String userImg;
-  bool isActive;
+  final String userId;
+  final String fullName;
+  final String email;
+  final String phoneNumber;
+  final String password;
+  final UserRole role;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  final String userDeviceToken;
+  final String userImg;
+  final bool isActive;
 
   UserModel({
     required this.userId,
@@ -45,17 +47,21 @@ class UserModel {
 
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
-      userId: map['userId'],
-      fullName: map['fullName'],
-      email: map['email'],
-      phoneNumber: map['phoneNumber'],
-      password: map['password'],
+      userId: map['userId'] ?? '',
+      fullName: map['fullName'] ?? '',
+      email: map['email'] ?? '',
+      phoneNumber: map['phoneNumber'] ?? '',
+      password: map['password'] ?? '',
       role: UserRole.values
           .firstWhere((e) => e.toString().split('.').last == map['role']),
-      createdAt: DateTime.parse(map['createdAt']),
-      updatedAt: DateTime.parse(map['updatedAt']),
-      userDeviceToken: map['userDeviceToken'],
-      userImg: map['userImg'],
+      createdAt: map['createdAt'] is Timestamp
+          ? (map['createdAt'] as Timestamp).toDate()
+          : DateTime.parse(map['createdAt']),
+      updatedAt: map['updatedAt'] is Timestamp
+          ? (map['updatedAt'] as Timestamp).toDate()
+          : DateTime.parse(map['updatedAt']),
+      userDeviceToken: map['userDeviceToken'] ?? '',
+      userImg: map['userImg'] ?? '',
       isActive: map['isActive'] ?? true,
     );
   }

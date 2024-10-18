@@ -7,12 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:44757863823:android:1cf2f30aac23c69b974ffa",
+        "mobilesdk_app_id": "1:44757863823:android:89adf5a8ed875f43974ffa",
         "android_client_info": {
-          "package_name": "com.example.vav_foods_user_app"
+          "package_name": "com.example.vav_foods_admin_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "44757863823-q29vqervugvs7ggep7vgcfnkske1qsri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAYy7G1LHXpsdFi-ZgFoLXBFcuK423RQ7E"
@@ -20,7 +25,63 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "44757863823-q29vqervugvs7ggep7vgcfnkske1qsri.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "44757863823-c0nf2o6ffgndo7hjb0sevfe1vc8lrfo9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.vavFoodsUserApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44757863823:android:1cf2f30aac23c69b974ffa",
+        "android_client_info": {
+          "package_name": "com.example.vav_foods_user_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "44757863823-u47b0n580rjf65umhg6mhkl1lgpvm0i7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vav_foods_user_app",
+            "certificate_hash": "c5e3018bd7e03bc305ac435e8c5a8ad3517bb299"
+          }
+        },
+        {
+          "client_id": "44757863823-q29vqervugvs7ggep7vgcfnkske1qsri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYy7G1LHXpsdFi-ZgFoLXBFcuK423RQ7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "44757863823-q29vqervugvs7ggep7vgcfnkske1qsri.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "44757863823-c0nf2o6ffgndo7hjb0sevfe1vc8lrfo9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.vavFoodsUserApp"
+              }
+            }
+          ]
         }
       }
     }

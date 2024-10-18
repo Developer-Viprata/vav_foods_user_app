@@ -9,6 +9,8 @@ abstract class Interfaces {
   );
 
   Future<void> login(String email, String password);
+
+  Future<void> loginWithGoogle();
   Future<void> logout();
 
   Future<void> forgotPassword(String email);

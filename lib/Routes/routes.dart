@@ -16,7 +16,7 @@ class AppRoutes {
   // static const String cartScreen = '/CartScreen';
 
   static final List<GetPage> routes = [
-    GetPage(name: welcomeScreen, page: () => const WelcomeScreen()),
+    GetPage(name: welcomeScreen, page: () => WelcomeScreen()),
     GetPage(name: splashScreen, page: () => const SignupScreen()),
     GetPage(name: loginScreen, page: () => const LoginScreen()),
     GetPage(

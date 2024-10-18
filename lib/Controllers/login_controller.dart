@@ -7,7 +7,7 @@ class LoginController extends GetxController {
   final FirebaseAuthRepo firebaseAuthRepo;
   LoginController({required this.firebaseAuthRepo});
 
-  final isLoading = false.obs;
+  final isLoading = true.obs;
 
   //login
   Future<void> login(
@@ -17,9 +17,9 @@ class LoginController extends GetxController {
     try {
       isLoading.value = true;
       await firebaseAuthRepo.login(email, password);
-      Get.snackbar('Success', "user signed up successfully");
+      Get.snackbar('Success', "User Login Successfully");
     } catch (e) {
-      Get.snackbar('Error', 'Failed to sign up');
+      Get.snackbar('Error', 'Failed to login');
       print("Error in the signup controller $e");
     } finally {
       isLoading.value = false;
@@ -27,4 +27,17 @@ class LoginController extends GetxController {
   }
 
   //sign in with google
+
+  Future<void> loginWithGoogle() async {
+    try {
+      isLoading.value = true;
+      await firebaseAuthRepo.loginWithGoogle();
+      Get.snackbar('Success', "Login with Google Account Successfully");
+    } catch (e) {
+      Get.snackbar('Error', 'Failed to login with google');
+      print("Error login in with google - $e");
+    } finally {
+      isLoading.value = false;
+    }
+  }
 }
