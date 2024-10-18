@@ -4,8 +4,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
+import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+// import 'package:google_sign_in/google_sign_in.dart';
 
+import '../../Routes/routes.dart';
 import '../interfaces/interfaces.dart';
 import '../models/user_model.dart';
 
@@ -84,6 +87,10 @@ class FirebaseAuthServices implements Interfaces {
 
         // This will trigger the Google Sign-In flow and prompt the user
         userCredential = await firebaseAuth.signInWithPopup(googleProvider);
+
+        if (userCredential != null) {
+          Get.toNamed(AppRoutes.homeScreen);
+        }
       } else {
         // Mobile-specific flow
         final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -100,8 +107,9 @@ class FirebaseAuthServices implements Interfaces {
           );
 
           userCredential = await firebaseAuth.signInWithCredential(credential);
+          Get.toNamed(AppRoutes.homeScreen);
         } else {
-          return; // User canceled the sign-in flow
+          return;
         }
       }
 
@@ -132,8 +140,10 @@ class FirebaseAuthServices implements Interfaces {
   // Logout method implementation
   @override
   Future<void> logout() async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
     try {
       await firebaseAuth.signOut();
+      await googleSignIn.signOut();
     } catch (e) {
       print("Error during logout: $e");
     }
@@ -145,6 +155,16 @@ class FirebaseAuthServices implements Interfaces {
       await firebaseAuth.sendPasswordResetEmail(email: email);
     } catch (e) {
       print("Error in sending password reset email: $e");
+    }
+  }
+
+  @override
+  Future<User?> checkCurrentUser() async {
+    try {
+      return firebaseAuth.currentUser;
+    } catch (e) {
+      print("Error fetching the current user: $e");
+      return null;
     }
   }
 }

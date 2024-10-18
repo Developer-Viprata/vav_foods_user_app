@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:vav_foods_user_app/Constants/colors.dart';
 import 'package:vav_foods_user_app/Constants/responsive.dart';
-import 'package:vav_foods_user_app/Presentation/widgets/my_app_bar.dart';
 import '../../Constants/appcolors.dart';
 import '../../Controllers/login_controller.dart';
 import '../../Routes/routes.dart';
@@ -18,9 +17,9 @@ class WelcomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: white,
-        appBar: MyAppBar(
+        /* appBar: MyAppBar(
           title: "Welcome Screen",
-        ),
+        ), */
         body: SingleChildScrollView(
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -80,7 +79,6 @@ class WelcomeScreen extends StatelessWidget {
                 ElevatedButton.icon(
                   onPressed: () async {
                     await loginController.loginWithGoogle();
-                    Get.toNamed(AppRoutes.homeScreen);
                   },
                   icon: const Icon(Icons.g_mobiledata, color: Colors.white),
                   label: HeadText(

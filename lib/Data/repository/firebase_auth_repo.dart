@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 import '../interfaces/interfaces.dart';
 
 class FirebaseAuthRepo {
@@ -28,5 +30,9 @@ class FirebaseAuthRepo {
 
   Future<void> forgotPassword(String email) {
     return interfaces.forgotPassword(email);
+  }
+
+  Future<User?> checkCurrentUser() {
+    return interfaces.checkCurrentUser();
   }
 }

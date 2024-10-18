@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:vav_foods_user_app/Presentation/widgets/my_app_bar.dart';
+
+import '../../Constants/appcolors.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,9 +9,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("User's Home Screen"),
-      ),
+      backgroundColor: AppColors.background,
+      appBar: MyAppBar(title: 'HomeScreen'),
     );
   }
 }

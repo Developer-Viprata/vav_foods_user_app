@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialBinding: AppBindings(),
-      initialRoute: AppRoutes.welcomeScreen,
+      initialRoute: AppRoutes.mainScreen,
       getPages: AppRoutes.routes,
     );
   }
