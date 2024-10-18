@@ -5,7 +5,7 @@ import '../Data/repository/firebase_auth_repo.dart';
 
 class SignupController extends GetxController {
   final FirebaseAuthRepo firebaseAuthRepo;
-  var isLoading = false.obs;
+  var isLoading = true.obs;
   var toggleIcon = false.obs;
 
   SignupController({required this.firebaseAuthRepo});
@@ -25,6 +25,19 @@ class SignupController extends GetxController {
     } catch (e) {
       Get.snackbar('Error', 'Failed to sign up');
       print("Error in the signup controller $e");
+    } finally {
+      isLoading.value = false;
+    }
+  }
+
+  Future<void> logout() async {
+    try {
+      isLoading.value = true;
+      await firebaseAuthRepo.logout();
+      Get.snackbar('Success', "signed out successfully");
+    } catch (e) {
+      Get.snackbar('Error', 'Failed to log out');
+      print("Error while sign out $e");
     } finally {
       isLoading.value = false;
     }

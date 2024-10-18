@@ -1,5 +1,7 @@
 //abstrat classes
 
+import 'package:firebase_auth/firebase_auth.dart';
+
 abstract class Interfaces {
   Future<void> signup(
     String email,
@@ -14,4 +16,5 @@ abstract class Interfaces {
   Future<void> logout();
 
   Future<void> forgotPassword(String email);
+  Future<User?> checkCurrentUser();
 }

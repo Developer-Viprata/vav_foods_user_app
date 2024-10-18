@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import '../Presentation/screens/forgot_password_screen.dart';
 import '../Presentation/screens/home_screen.dart';
 import '../Presentation/screens/login_screen.dart';
+import '../Presentation/screens/main_screen.dart';
 import '../Presentation/screens/signup_screen.dart';
 import '../Presentation/screens/welcome_screen.dart';
 
@@ -9,9 +10,11 @@ import '../Presentation/screens/welcome_screen.dart';
 class AppRoutes {
   static const String splashScreen = '/';
   static const String welcomeScreen = '/WelcomeScreen';
+
   static const String signupScreen = '/SignupScren';
   static const String loginScreen = '/LoginScreen';
   static const String forgotPasswordScreen = '/ForgotPasswordScreen';
+  static const String mainScreen = '/MainScreen';
   static const String homeScreen = '/HomeScreen';
   // static const String cartScreen = '/CartScreen';
 
@@ -22,5 +25,6 @@ class AppRoutes {
     GetPage(
         name: forgotPasswordScreen, page: () => const ForgotPasswordScreen()),
     GetPage(name: homeScreen, page: () => const HomeScreen()),
+    GetPage(name: mainScreen, page: () => MainScreen()),
   ];
 }
